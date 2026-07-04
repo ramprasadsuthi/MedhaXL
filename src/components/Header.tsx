@@ -58,13 +58,13 @@ export default function Header({
   return (
     <header className="glass sticky top-0 z-50 w-full border-b border-slate-200 dark:border-slate-800 transition-colors duration-300">
       {/* Top Banner (Info / Action) */}
-      <div className="bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-500 py-1.5 px-4 text-center text-xs font-semibold text-white tracking-wide">
+      <div className="bg-gradient-to-r from-blue-700 to-cyan-500 py-1.5 px-4 text-center text-xs font-semibold text-white tracking-wide shadow-sm">
         <span className="inline-flex items-center gap-1.5">
-          <Sparkles className="h-3.5 w-3.5 animate-pulse text-yellow-300" />
+          <Sparkles className="h-3.5 w-3.5 animate-pulse text-cyan-200" />
           Medha XL AI Hub is LIVE: Generate personalized study plans & analyze your resume instantly!
           <button 
             onClick={() => setCurrentTab("ai-hub")}
-            className="underline hover:text-cyan-200 ml-1.5 transition-all font-bold"
+            className="underline hover:text-cyan-100 ml-1.5 transition-all font-bold"
             id="header-cta-top"
           >
             Try AI Advisor <ArrowRight className="inline-block h-3 w-3" />
@@ -76,18 +76,26 @@ export default function Header({
         {/* Brand Logo */}
         <div 
           onClick={() => { setCurrentTab("home"); setIsMobileMenuOpen(false); }}
-          className="flex cursor-pointer items-center gap-2.5"
+          className="flex cursor-pointer items-center gap-3"
           id="brand-logo-container"
         >
-          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-blue-600 shadow-md shadow-blue-200 dark:shadow-none text-white">
-            <span className="text-white font-bold text-xs font-poppins">MXL</span>
+          {/* Hexagonal Blue Logo as in the actual MR Technologies image */}
+          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-blue-600 text-white shrink-0 shadow-md">
+            <svg viewBox="0 0 100 100" className="h-8 w-8 text-white">
+              <polygon points="50,5 93,30 93,80 50,95 7,80 7,30" fill="currentColor" />
+              <polygon points="50,12 87,33 87,77 50,90 13,77 13,33" fill="none" stroke="#22d3ee" strokeWidth="4" />
+              <text x="50" y="62" fill="white" fontSize="32" fontWeight="900" fontFamily="Poppins, sans-serif" textAnchor="middle">MR</text>
+            </svg>
           </div>
           <div className="flex flex-col">
-            <span className="text-lg font-bold font-poppins tracking-tight text-slate-800 dark:text-white leading-none">
-              MEDHA <span className="text-blue-600 dark:text-blue-400">XL</span>
+            <span className="text-[12px] font-extrabold font-poppins tracking-wider text-blue-600 dark:text-blue-400 leading-tight">
+              MR TECHNOLOGIES
             </span>
-            <span className="text-[9px] font-bold tracking-wider text-slate-500 dark:text-slate-400 uppercase leading-none mt-1 font-poppins">
-              IT Training & Software
+            <span className="text-[10px] font-bold font-poppins tracking-widest text-slate-800 dark:text-slate-100 leading-none">
+              MEDHA - RUBIKS
+            </span>
+            <span className="text-[7px] font-extrabold tracking-widest text-slate-500 dark:text-slate-400 uppercase leading-none mt-1 font-poppins">
+              Trainings - Placements - Services
             </span>
           </div>
         </div>
@@ -177,11 +185,11 @@ export default function Header({
 
           <button
             onClick={() => setCurrentTab("ai-hub")}
-            className={`px-3 py-2 text-sm font-medium rounded-lg flex items-center gap-1 text-purple-600 dark:text-purple-400 hover:bg-purple-50 dark:hover:bg-purple-950/20 transition-all ${
-              currentTab === "ai-hub" ? "bg-purple-50 dark:bg-purple-950/50 text-purple-700" : ""
+            className={`px-3 py-2 text-sm font-medium rounded-lg flex items-center gap-1 text-cyan-600 dark:text-cyan-400 hover:bg-cyan-50 dark:hover:bg-cyan-950/20 transition-all ${
+              currentTab === "ai-hub" ? "bg-cyan-50 dark:bg-cyan-950/50 text-cyan-700" : ""
             }`}
           >
-            <Sparkles className="h-4 w-4 animate-bounce text-purple-500" />
+            <Sparkles className="h-4 w-4 animate-bounce text-cyan-500" />
             AI Learning Hub
           </button>
 
@@ -365,9 +373,9 @@ export default function Header({
           </button>
           <button
             onClick={() => { setCurrentTab("ai-hub"); setIsMobileMenuOpen(false); }}
-            className={`w-full text-left px-4 py-2.5 text-sm font-semibold rounded-xl flex items-center gap-1.5 text-purple-600 dark:text-purple-400 ${currentTab === "ai-hub" ? "bg-purple-50 dark:bg-purple-950/40" : ""}`}
+            className={`w-full text-left px-4 py-2.5 text-sm font-semibold rounded-xl flex items-center gap-1.5 text-cyan-600 dark:text-cyan-400 ${currentTab === "ai-hub" ? "bg-cyan-50 dark:bg-cyan-950/40" : ""}`}
           >
-            <Sparkles className="h-4 w-4 text-purple-500" />
+            <Sparkles className="h-4 w-4 text-cyan-500" />
             AI Learning Hub
           </button>
           <button

@@ -142,8 +142,8 @@ export default function AIHub() {
         
         {/* Banner Section */}
         <div className="text-center space-y-3">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-purple-50 border border-purple-100 text-purple-700 text-xs font-semibold dark:bg-purple-950/40 dark:border-purple-900/40 dark:text-purple-300 font-poppins">
-            <Sparkles className="h-3.5 w-3.5 animate-spin text-purple-500" />
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-cyan-50 border border-cyan-100 text-cyan-700 text-xs font-semibold dark:bg-cyan-950/40 dark:border-cyan-900/40 dark:text-cyan-300 font-poppins">
+            <Sparkles className="h-3.5 w-3.5 animate-spin text-cyan-500" />
             <span>Medha XL AI Engine</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold font-poppins tracking-tight text-gray-900 dark:text-white">
@@ -236,7 +236,7 @@ export default function AIHub() {
                   <button
                     onClick={handleCounselorSubmit}
                     disabled={loading}
-                    className="w-full py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl text-xs font-bold hover:opacity-90 disabled:opacity-50 transition-all flex items-center justify-center gap-2"
+                    className="w-full py-3 bg-gradient-to-r from-blue-600 to-cyan-500 text-white rounded-xl text-xs font-bold hover:opacity-90 disabled:opacity-50 transition-all flex items-center justify-center gap-2"
                   >
                     {loading ? <Loader2 className="h-4 w-4 animate-spin" /> : <Sparkles className="h-4 w-4" />}
                     Analyze Profile & Generate Study Roadmap
@@ -323,7 +323,7 @@ export default function AIHub() {
                   <button
                     onClick={handleResumeSubmit}
                     disabled={loading}
-                    className="w-full py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl text-xs font-bold hover:opacity-90 disabled:opacity-50 transition-all flex items-center justify-center gap-2"
+                    className="w-full py-3 bg-gradient-to-r from-blue-600 to-cyan-500 text-white rounded-xl text-xs font-bold hover:opacity-90 disabled:opacity-50 transition-all flex items-center justify-center gap-2"
                   >
                     {loading ? <Loader2 className="h-4 w-4 animate-spin" /> : <Sparkles className="h-4 w-4" />}
                     Analyze Resume Credentials
@@ -436,7 +436,7 @@ export default function AIHub() {
                   <button
                     onClick={handleDoubtSubmit}
                     disabled={loading}
-                    className="w-full py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl text-xs font-bold hover:opacity-90 disabled:opacity-50 transition-all flex items-center justify-center gap-2"
+                    className="w-full py-3 bg-gradient-to-r from-blue-600 to-cyan-500 text-white rounded-xl text-xs font-bold hover:opacity-90 disabled:opacity-50 transition-all flex items-center justify-center gap-2"
                   >
                     {loading ? <Loader2 className="h-4 w-4 animate-spin" /> : <Send className="h-3.5 w-3.5" />}
                     Submit Doubt to AI Mentor
@@ -472,7 +472,7 @@ export default function AIHub() {
             <div className="space-y-6">
               {!interviewStarted ? (
                 <div className="max-w-xl mx-auto bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-100 dark:border-slate-800 text-center space-y-4">
-                  <div className="h-12 w-12 bg-purple-100 dark:bg-purple-900/30 text-purple-600 rounded-full flex items-center justify-center mx-auto">
+                  <div className="h-12 w-12 bg-cyan-100 dark:bg-cyan-900/30 text-cyan-600 rounded-full flex items-center justify-center mx-auto">
                     <UserCheck className="h-6 w-6" />
                   </div>
                   <h3 className="text-lg font-bold font-poppins text-gray-900 dark:text-white">Start Simulated Recruiter Interview</h3>
@@ -512,7 +512,7 @@ export default function AIHub() {
                   <button
                     onClick={handleStartInterview}
                     disabled={loading}
-                    className="w-full py-3 bg-purple-600 text-white font-bold rounded-xl text-xs hover:bg-purple-700 transition-all flex items-center justify-center gap-2"
+                    className="w-full py-3 bg-cyan-600 text-white font-bold rounded-xl text-xs hover:bg-cyan-700 transition-all flex items-center justify-center gap-2"
                   >
                     {loading && <Loader2 className="h-4 w-4 animate-spin" />}
                     Initialize Interview Boardroom
@@ -541,7 +541,7 @@ export default function AIHub() {
                       >
                         <div
                           className={`h-7 w-7 rounded-full flex items-center justify-center text-xs font-bold shrink-0 ${
-                            msg.role === "user" ? "bg-blue-600 text-white" : "bg-purple-600 text-white"
+                            msg.role === "user" ? "bg-blue-600 text-white" : "bg-cyan-600 text-white"
                           }`}
                         >
                           {msg.role === "user" ? "U" : "HR"}
@@ -559,7 +559,7 @@ export default function AIHub() {
                     ))}
                     {loading && (
                       <div className="flex gap-2 items-center text-xs text-gray-400">
-                        <Loader2 className="h-4.5 w-4.5 animate-spin text-purple-600" />
+                        <Loader2 className="h-4.5 w-4.5 animate-spin text-cyan-600" />
                         <span>Recruiter is writing feedback / typing next question...</span>
                       </div>
                     )}
@@ -573,12 +573,12 @@ export default function AIHub() {
                       onChange={(e) => setCurrentAnswer(e.target.value)}
                       placeholder="Type your technical response here..."
                       onKeyDown={(e) => { if (e.key === "Enter") handleSendAnswer(); }}
-                      className="flex-1 rounded-xl border border-gray-200 bg-white px-4 py-3 text-xs outline-none focus:border-purple-500 dark:border-gray-800 dark:bg-slate-900 dark:text-white"
+                      className="flex-1 rounded-xl border border-gray-200 bg-white px-4 py-3 text-xs outline-none focus:border-cyan-500 dark:border-gray-800 dark:bg-slate-900 dark:text-white"
                     />
                     <button
                       onClick={handleSendAnswer}
                       disabled={loading || !currentAnswer.trim()}
-                      className="px-5 bg-purple-600 hover:bg-purple-700 text-white text-xs font-bold rounded-xl disabled:opacity-40 transition-all flex items-center justify-center"
+                      className="px-5 bg-cyan-600 hover:bg-cyan-700 text-white text-xs font-bold rounded-xl disabled:opacity-40 transition-all flex items-center justify-center"
                     >
                       Submit
                     </button>

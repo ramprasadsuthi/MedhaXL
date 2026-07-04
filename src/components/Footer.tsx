@@ -21,10 +21,16 @@ export default function Footer({ onNavigate }: { onNavigate: (tab: string) => vo
         {/* Brand identity */}
         <div className="space-y-4 text-center md:text-left">
           <div className="flex items-center justify-center md:justify-start gap-2.5">
-            <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white h-9 w-9 rounded-xl flex items-center justify-center font-bold font-poppins shadow-md">
-              M
+            <div className="bg-blue-600 text-white h-9 w-9 rounded-xl flex items-center justify-center font-bold font-poppins shadow-md shrink-0">
+              <svg viewBox="0 0 100 100" className="h-6 w-6 text-white">
+                <polygon points="50,5 93,30 93,80 50,95 7,80 7,30" fill="currentColor" />
+                <text x="50" y="62" fill="white" fontSize="36" fontWeight="900" fontFamily="Poppins, sans-serif" textAnchor="middle">MR</text>
+              </svg>
             </div>
-            <span className="font-poppins font-bold text-white text-xl tracking-wider">MEDHA <span className="text-blue-500">XL</span></span>
+            <div className="flex flex-col text-left">
+              <span className="font-poppins font-extrabold text-white text-sm tracking-wide leading-tight">MR TECHNOLOGIES</span>
+              <span className="font-poppins font-bold text-cyan-400 text-xs tracking-widest leading-none">MEDHA - RUBIKS</span>
+            </div>
           </div>
           <p className="text-xs text-slate-400 leading-relaxed max-w-xs mx-auto md:mx-0">
             Learn Today. Lead Tomorrow. Industry-oriented, hands-on IT training designed to land students in premium MNC developer roles.

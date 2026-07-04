@@ -12,7 +12,7 @@ export default function About() {
     {
       title: "Real Client Labs",
       desc: "Through our parent software development wing, students work on real-time client software requirements, APIs, and automated test pipelines.",
-      icon: <Building className="h-6 w-6 text-purple-600" />
+      icon: <Building className="h-6 w-6 text-cyan-500" />
     },
     {
       title: "AI-Native Education",
@@ -66,9 +66,9 @@ export default function About() {
             </div>
           </div>
 
-          <div className="bg-gradient-to-tr from-purple-50 to-white dark:from-slate-950 dark:to-slate-900 p-6 sm:p-8 rounded-2xl border border-purple-100/50 dark:border-purple-900/20 flex flex-col justify-between">
+          <div className="bg-gradient-to-tr from-cyan-50 to-white dark:from-slate-950 dark:to-slate-900 p-6 sm:p-8 rounded-2xl border border-cyan-100/50 dark:border-cyan-900/20 flex flex-col justify-between">
             <div className="space-y-4">
-              <div className="h-12 w-12 rounded-xl bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center text-purple-600">
+              <div className="h-12 w-12 rounded-xl bg-cyan-100 dark:bg-cyan-900/30 flex items-center justify-center text-cyan-600">
                 <Eye className="h-6 w-6" />
               </div>
               <h3 className="text-xl font-bold font-poppins text-gray-900 dark:text-white">Our Vision</h3>
@@ -76,8 +76,8 @@ export default function About() {
                 To stand as the absolute global benchmark for industry-oriented technology incubation. We envision a future where MEDHA XL certificates represent guaranteed proof of actual operational engineering competencies and clean coding practices.
               </p>
             </div>
-            <div className="mt-6 border-t border-purple-200/40 pt-4 flex items-center gap-3">
-              <span className="text-xs font-extrabold text-purple-600 uppercase tracking-widest">Industry Aligned Outcomes</span>
+            <div className="mt-6 border-t border-cyan-200/40 pt-4 flex items-center gap-3">
+              <span className="text-xs font-extrabold text-cyan-600 uppercase tracking-widest">Industry Aligned Outcomes</span>
             </div>
           </div>
         </div>
@@ -86,7 +86,7 @@ export default function About() {
         <div className="bg-slate-50 dark:bg-slate-950 border border-gray-100 dark:border-gray-800 rounded-2xl p-6 sm:p-10 grid md:grid-cols-12 gap-8 items-center">
           <div className="md:col-span-4 flex justify-center">
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-tr from-blue-600 to-purple-600 rounded-2xl blur-md opacity-30 transform rotate-3" />
+              <div className="absolute inset-0 bg-gradient-to-tr from-blue-600 to-cyan-500 rounded-2xl blur-md opacity-30 transform rotate-3" />
               <img
                 src={TRAINERS[0].avatar}
                 alt="Anil Kumar CEO"
