@@ -9,11 +9,13 @@ export default function LMSPortal() {
   const [gitLink, setGitLink] = useState("");
   const [notesText, setNotesText] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [assignmentError, setAssignmentError] = useState("");
 
   // Certification States
   const [certificateGenerated, setCertificateGenerated] = useState(false);
   const [studentName, setStudentName] = useState("Rohan Deshmukh");
   const [certificateCourse, setCertificateCourse] = useState("MERN Stack Web Development");
+  const [downloadFeedback, setDownloadFeedback] = useState(false);
 
   // Play Video States
   const [playingVideo, setPlayingVideo] = useState({
@@ -87,9 +89,10 @@ export default function LMSPortal() {
   const handleAssignmentSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!gitLink) {
-      alert("Please provide your assignment repository link.");
+      setAssignmentError("Please provide your assignment repository link.");
       return;
     }
+    setAssignmentError("");
     setSubmitted(true);
   };
 
@@ -314,6 +317,12 @@ export default function LMSPortal() {
                       />
                     </div>
 
+                    {assignmentError && (
+                      <div className="p-2.5 rounded-lg text-xs font-semibold bg-red-50 text-red-600 dark:bg-red-950/30 dark:text-red-400 border border-red-100 dark:border-red-900/40 animate-fadeIn">
+                        {assignmentError}
+                      </div>
+                    )}
+
                     <button
                       type="submit"
                       className="w-full py-3 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 transition-all flex items-center justify-center gap-1.5 shadow"
@@ -511,16 +520,22 @@ export default function LMSPortal() {
                       </div>
                     </div>
 
+                    {downloadFeedback && (
+                      <div className="p-3 bg-green-50 dark:bg-green-950/20 text-green-600 dark:text-green-400 text-xs font-semibold rounded-xl border border-green-100 dark:border-green-900/20 text-center animate-fadeIn">
+                        🎉 Certificate saved securely! Click 'Download PDF' again to export local print files.
+                      </div>
+                    )}
+
                     <div className="flex gap-2 justify-end text-xs">
                       <button
-                        onClick={() => setCertificateGenerated(false)}
-                        className="px-4 py-2 border rounded-xl hover:bg-gray-50 dark:border-gray-850"
+                        onClick={() => { setCertificateGenerated(false); setDownloadFeedback(false); }}
+                        className="px-4 py-2 border rounded-xl hover:bg-gray-50 dark:border-gray-850 cursor-pointer"
                       >
                         Regenerate / Edit Name
                       </button>
                       <button
-                        onClick={() => alert("Digital copy saved to browser local store. Share link via LinkedIn.")}
-                        className="px-5 py-2 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl shadow"
+                        onClick={() => setDownloadFeedback(true)}
+                        className="px-5 py-2 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl shadow cursor-pointer transition-all"
                       >
                         Download PDF
                       </button>

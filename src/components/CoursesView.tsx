@@ -42,15 +42,19 @@ export default function CoursesView({ onWishlistToggle, wishlist, onEnroll }: Co
     return matchesCategory && matchesSearch;
   });
 
+  const [compareError, setCompareError] = useState(false);
+
   // Handle Course Comparison select
   const toggleCompare = (courseId: string) => {
     if (compareList.includes(courseId)) {
       setCompareList(compareList.filter(id => id !== courseId));
+      setCompareError(false);
     } else {
       if (compareList.length >= 2) {
-        alert("You can compare up to 2 courses simultaneously.");
+        setCompareError(true);
         return;
       }
+      setCompareError(false);
       setCompareList([...compareList, courseId]);
     }
   };
@@ -110,25 +114,25 @@ export default function CoursesView({ onWishlistToggle, wishlist, onEnroll }: Co
         </div>
 
         {/* Compare quick trigger bar */}
-        {compareList.length > 0 && (
-          <div className="flex items-center justify-between bg-gradient-to-r from-blue-600 to-purple-600 text-white p-4 rounded-xl shadow-lg transition-all">
+        {(compareList.length > 0 || compareError) && (
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white p-4 rounded-xl shadow-lg transition-all animate-fadeIn">
             <div className="flex items-center gap-3">
               <Shuffle className="h-5 w-5 animate-pulse" />
               <p className="text-xs sm:text-sm font-semibold">
-                You have selected {compareList.length} course(s) to compare.
+                {compareError ? "You can compare up to 2 courses simultaneously." : `You have selected ${compareList.length} course(s) to compare.`}
               </p>
             </div>
             <div className="flex items-center gap-2">
               <button
-                onClick={() => setCompareList([])}
-                className="text-xs text-blue-100 hover:underline px-2.5 py-1"
+                onClick={() => { setCompareList([]); setCompareError(false); }}
+                className="text-xs text-blue-100 hover:underline px-2.5 py-1 cursor-pointer"
               >
                 Clear Selection
               </button>
               {compareList.length === 2 && (
                 <button
                   onClick={() => setShowCompareModal(true)}
-                  className="px-4 py-1.5 bg-white text-blue-600 rounded-lg text-xs font-bold hover:bg-opacity-90 shadow"
+                  className="px-4 py-1.5 bg-white text-blue-600 rounded-lg text-xs font-bold hover:bg-opacity-90 shadow cursor-pointer transition-all"
                 >
                   Compare Now
                 </button>

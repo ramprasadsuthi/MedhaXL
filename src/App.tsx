@@ -248,7 +248,7 @@ export default function App() {
 
         {/* TAB 8: Trainer & Admin Portal */}
         {currentTab === "admin" && (
-          <AdminPanel />
+          <AdminPanel role={userRole} />
         )}
 
       </main>

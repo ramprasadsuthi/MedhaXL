@@ -26,6 +26,7 @@ export default function Header({
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResults, setSearchResults] = useState<any[]>([]);
   const [showSearchResults, setShowSearchResults] = useState(false);
+  const [isRoleDropdownOpen, setIsRoleDropdownOpen] = useState(false);
 
   // Handle Search Input
   useEffect(() => {
@@ -40,6 +41,19 @@ export default function Header({
     );
     setSearchResults(filtered);
   }, [searchQuery]);
+
+  // Handle outside clicks for Role Dropdown
+  useEffect(() => {
+    if (!isRoleDropdownOpen) return;
+    const handleOutsideClick = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      if (!target.closest("#portal-switcher-container")) {
+        setIsRoleDropdownOpen(false);
+      }
+    };
+    document.addEventListener("click", handleOutsideClick);
+    return () => document.removeEventListener("click", handleOutsideClick);
+  }, [isRoleDropdownOpen]);
 
   return (
     <header className="glass sticky top-0 z-50 w-full border-b border-slate-200 dark:border-slate-800 transition-colors duration-300">
@@ -263,38 +277,41 @@ export default function Header({
           </button>
 
           {/* Portal Switcher (Extremely rich developer interactive element!) */}
-          <div className="relative group">
-            <button className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-bold rounded-full bg-slate-900 text-white dark:bg-white dark:text-slate-900 hover:opacity-90 shadow-md">
+          <div className="relative group" id="portal-switcher-container">
+            <button 
+              onClick={() => setIsRoleDropdownOpen(!isRoleDropdownOpen)}
+              className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-bold rounded-full bg-slate-900 text-white dark:bg-white dark:text-slate-900 hover:opacity-90 shadow-md cursor-pointer"
+            >
               <User className="h-3.5 w-3.5" />
               <span className="capitalize hidden sm:inline">{userRole === "visitor" ? "Portal Access" : `${userRole} Portal`}</span>
-              <ChevronDown className="h-3 w-3" />
+              <ChevronDown className={`h-3 w-3 transition-transform ${isRoleDropdownOpen ? "rotate-180" : ""}`} />
             </button>
-            <div className="absolute right-0 mt-2 w-48 rounded-2xl border border-gray-100 bg-white p-1.5 shadow-2xl dark:border-gray-800 dark:bg-slate-900 hidden group-hover:block z-50 animate-fadeIn">
+            <div className={`absolute right-0 mt-2 w-48 rounded-2xl border border-gray-100 bg-white p-1.5 shadow-2xl dark:border-gray-800 dark:bg-slate-900 ${isRoleDropdownOpen ? "block" : "hidden"} z-50 animate-fadeIn`}>
               <p className="text-[9px] font-extrabold text-gray-400 uppercase tracking-widest px-3 py-1">Simulate Roles</p>
               <button
-                onClick={() => { setUserRole("visitor"); setCurrentTab("home"); }}
-                className={`flex w-full items-center gap-2.5 px-3 py-2 text-xs font-medium rounded-lg text-left transition-colors ${userRole === "visitor" ? "bg-blue-50 text-blue-600 dark:bg-blue-950/40" : "text-gray-700 hover:bg-gray-50 dark:text-slate-200 dark:hover:bg-slate-800"}`}
+                onClick={() => { setUserRole("visitor"); setCurrentTab("home"); setIsRoleDropdownOpen(false); }}
+                className={`flex w-full items-center gap-2.5 px-3 py-2 text-xs font-medium rounded-lg text-left transition-colors cursor-pointer ${userRole === "visitor" ? "bg-blue-50 text-blue-600 dark:bg-blue-950/40" : "text-gray-700 hover:bg-gray-50 dark:text-slate-200 dark:hover:bg-slate-800"}`}
               >
                 <BookOpen className="h-3.5 w-3.5" />
                 Visitor Site
               </button>
               <button
-                onClick={() => { setUserRole("student"); setCurrentTab("lms"); }}
-                className={`flex w-full items-center gap-2.5 px-3 py-2 text-xs font-medium rounded-lg text-left transition-colors ${userRole === "student" ? "bg-blue-50 text-blue-600 dark:bg-blue-950/40" : "text-gray-700 hover:bg-gray-50 dark:text-slate-200 dark:hover:bg-slate-800"}`}
+                onClick={() => { setUserRole("student"); setCurrentTab("lms"); setIsRoleDropdownOpen(false); }}
+                className={`flex w-full items-center gap-2.5 px-3 py-2 text-xs font-medium rounded-lg text-left transition-colors cursor-pointer ${userRole === "student" ? "bg-blue-50 text-blue-600 dark:bg-blue-950/40" : "text-gray-700 hover:bg-gray-50 dark:text-slate-200 dark:hover:bg-slate-800"}`}
               >
                 <GraduationCap className="h-3.5 w-3.5" />
                 Student Portal
               </button>
               <button
-                onClick={() => { setUserRole("trainer"); setCurrentTab("admin"); }}
-                className={`flex w-full items-center gap-2.5 px-3 py-2 text-xs font-medium rounded-lg text-left transition-colors ${userRole === "trainer" ? "bg-blue-50 text-blue-600 dark:bg-blue-950/40" : "text-gray-700 hover:bg-gray-50 dark:text-slate-200 dark:hover:bg-slate-800"}`}
+                onClick={() => { setUserRole("trainer"); setCurrentTab("admin"); setIsRoleDropdownOpen(false); }}
+                className={`flex w-full items-center gap-2.5 px-3 py-2 text-xs font-medium rounded-lg text-left transition-colors cursor-pointer ${userRole === "trainer" ? "bg-blue-50 text-blue-600 dark:bg-blue-950/40" : "text-gray-700 hover:bg-gray-50 dark:text-slate-200 dark:hover:bg-slate-800"}`}
               >
                 <Phone className="h-3.5 w-3.5" />
                 Trainer Hub
               </button>
               <button
-                onClick={() => { setUserRole("admin"); setCurrentTab("admin"); }}
-                className={`flex w-full items-center gap-2.5 px-3 py-2 text-xs font-medium rounded-lg text-left transition-colors ${userRole === "admin" ? "bg-blue-50 text-blue-600 dark:bg-blue-950/40" : "text-gray-700 hover:bg-gray-50 dark:text-slate-200 dark:hover:bg-slate-800"}`}
+                onClick={() => { setUserRole("admin"); setCurrentTab("admin"); setIsRoleDropdownOpen(false); }}
+                className={`flex w-full items-center gap-2.5 px-3 py-2 text-xs font-medium rounded-lg text-left transition-colors cursor-pointer ${userRole === "admin" ? "bg-blue-50 text-blue-600 dark:bg-blue-950/40" : "text-gray-700 hover:bg-gray-50 dark:text-slate-200 dark:hover:bg-slate-800"}`}
               >
                 <Shield className="h-3.5 w-3.5" />
                 Admin Panel
