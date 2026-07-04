@@ -1,0 +1,6 @@
+{
+  "name": "MEDHA XL",
+  "description": "Premium AI-Powered EdTech & Industry-Oriented IT Training Platform with LMS, Code Editor, AI Career Counselor, and Student Dashboard.",
+  "requestFramePermissions": ["camera", "microphone", "geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
