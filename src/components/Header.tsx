@@ -58,13 +58,13 @@ export default function Header({
   return (
     <header className="glass sticky top-0 z-50 w-full border-b border-slate-200 dark:border-slate-800 transition-colors duration-300">
       {/* Top Banner (Info / Action) */}
-      <div className="bg-gradient-to-r from-blue-700 to-cyan-500 py-1.5 px-4 text-center text-xs font-semibold text-white tracking-wide shadow-sm">
+      <div className="bg-gradient-to-r from-blue-700 to-purple-600 py-1.5 px-4 text-center text-xs font-semibold text-white tracking-wide shadow-sm">
         <span className="inline-flex items-center gap-1.5">
-          <Sparkles className="h-3.5 w-3.5 animate-pulse text-cyan-200" />
+          <Sparkles className="h-3.5 w-3.5 animate-pulse text-purple-200" />
           Medha XL AI Hub is LIVE: Generate personalized study plans & analyze your resume instantly!
           <button 
             onClick={() => setCurrentTab("ai-hub")}
-            className="underline hover:text-cyan-100 ml-1.5 transition-all font-bold"
+            className="underline hover:text-purple-100 ml-1.5 transition-all font-bold"
             id="header-cta-top"
           >
             Try AI Advisor <ArrowRight className="inline-block h-3 w-3" />
@@ -83,7 +83,7 @@ export default function Header({
           <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-blue-600 text-white shrink-0 shadow-md">
             <svg viewBox="0 0 100 100" className="h-8 w-8 text-white">
               <polygon points="50,5 93,30 93,80 50,95 7,80 7,30" fill="currentColor" />
-              <polygon points="50,12 87,33 87,77 50,90 13,77 13,33" fill="none" stroke="#22d3ee" strokeWidth="4" />
+              <polygon points="50,12 87,33 87,77 50,90 13,77 13,33" fill="none" stroke="#a78bfa" strokeWidth="4" />
               <text x="50" y="62" fill="white" fontSize="32" fontWeight="900" fontFamily="Poppins, sans-serif" textAnchor="middle">MR</text>
             </svg>
           </div>
@@ -278,7 +278,7 @@ export default function Header({
           {/* Dark/Light mode toggle */}
           <button
             onClick={() => setDarkMode(!darkMode)}
-            className="p-2 text-gray-500 hover:text-yellow-500 dark:hover:text-yellow-400 rounded-lg dark:text-slate-300 transition-all"
+            className="p-2 text-gray-500 hover:text-yellow-500 dark:hover:text-yellow-400 rounded-lg dark:text-slate-300 transition-all cursor-pointer"
             id="theme-toggler"
           >
             {darkMode ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
@@ -373,9 +373,9 @@ export default function Header({
           </button>
           <button
             onClick={() => { setCurrentTab("ai-hub"); setIsMobileMenuOpen(false); }}
-            className={`w-full text-left px-4 py-2.5 text-sm font-semibold rounded-xl flex items-center gap-1.5 text-cyan-600 dark:text-cyan-400 ${currentTab === "ai-hub" ? "bg-cyan-50 dark:bg-cyan-950/40" : ""}`}
+            className={`w-full text-left px-4 py-2.5 text-sm font-semibold rounded-xl flex items-center gap-1.5 text-purple-600 dark:text-purple-400 ${currentTab === "ai-hub" ? "bg-purple-50 dark:bg-purple-950/40" : ""}`}
           >
-            <Sparkles className="h-4 w-4 text-cyan-500" />
+            <Sparkles className="h-4 w-4 text-purple-500" />
             AI Learning Hub
           </button>
           <button

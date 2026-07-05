@@ -49,7 +49,7 @@ export default function Hero({ setCurrentTab, onBookDemo }: HeroProps) {
             {/* Primary Headline */}
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold font-poppins tracking-tight text-slate-900 dark:text-white leading-tight">
               Transform Your Career with <br />
-              <span className="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-blue-600 to-purple-500 bg-clip-text text-transparent">
                 Industry-Ready
               </span>{" "}
               IT Training
@@ -122,7 +122,7 @@ export default function Hero({ setCurrentTab, onBookDemo }: HeroProps) {
 
           {/* Right: Immersive Laptop Mockup / Graphics */}
           <div className="lg:col-span-5 relative mt-6 lg:mt-0">
-            <div className="relative mx-auto max-w-[420px] aspect-[4/3] rounded-2xl bg-gradient-to-br from-blue-600 to-cyan-500 p-0.5 shadow-2xl ai-glow">
+            <div className="relative mx-auto max-w-[420px] aspect-[4/3] rounded-2xl bg-gradient-to-br from-blue-600 to-purple-500 p-0.5 shadow-2xl ai-glow">
               <div className="w-full h-full rounded-xl bg-slate-900 overflow-hidden relative">
                 
                 {/* Simulated IDE inside the mockup */}
@@ -144,7 +144,7 @@ export default function Hero({ setCurrentTab, onBookDemo }: HeroProps) {
                   <p><span className="text-blue-400">const</span> student = <span className="text-yellow-400">MedhaXLStudent</span>.getProfile();</p>
                   <p className="pl-4">student.<span className="text-cyan-400">setRoadmap</span>(<span className="text-purple-400">await</span> GeminiAssistant.<span className="text-yellow-400">buildStudyPlan</span>({"{"}</p>
                   <p className="pl-8">curriculum: <span className="text-green-400">"MERN Stack & AI Engineering"</span>,</p>
-                  <p className="pl-8">placementStatus: <span className="text-cyan-400">"Assured"</span></p>
+                  <p className="pl-8">placementStatus: <span className="text-purple-400">"Assured"</span></p>
                   <p className="pl-4">{"}"}));</p>
                   <p className="text-green-500 font-semibold">// Output: Ready to land 12 LPA Offer Letter!</p>
                 </div>
@@ -184,7 +184,7 @@ export default function Hero({ setCurrentTab, onBookDemo }: HeroProps) {
                 key={i}
                 className="bg-white/40 dark:bg-slate-900/40 border border-gray-100 dark:border-gray-800/40 rounded-xl p-4 text-center hover:shadow-md transition-all duration-300"
               >
-                <p className="text-3xl sm:text-4xl font-extrabold text-blue-600 dark:text-blue-400 bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
+                <p className="text-3xl sm:text-4xl font-extrabold text-blue-600 dark:text-blue-400 bg-gradient-to-r from-blue-600 to-purple-500 bg-clip-text text-transparent">
                   {stat.value}
                 </p>
                 <p className="text-xs font-bold text-gray-900 dark:text-white mt-1 uppercase tracking-wide">

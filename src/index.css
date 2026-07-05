@@ -1,40 +1,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700;800;900&display=swap');
 @import "tailwindcss";
 
+@variant dark (&:where(.dark, .dark *));
+
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-poppins: "Poppins", sans-serif;
 
-  /* Custom Royal Edutech Blue Palette - Inspired by MR Technologies Brand Identity */
-  --color-blue-50: #f0f7ff;
-  --color-blue-100: #e0effe;
-  --color-blue-200: #bae0fd;
-  --color-blue-300: #7cd0fc;
-  --color-blue-400: #38bef8;
-  --color-blue-500: #0ea5e9; /* Tech Cyan from MR Technologies */
-  --color-blue-600: #0d3a71; /* Deep Trustworthy Academic Royal Blue from Logo & Buttons */
-  --color-blue-700: #0b2e5c; /* Even deeper navy */
-  --color-blue-800: #071f40;
-  --color-blue-900: #05152b;
-  --color-blue-950: #030b17;
+  /* Custom Royal Edutech Blue Palette - Inspired by Coursera/edX */
+  --color-blue-50: #eff6ff;
+  --color-blue-100: #dbeafe;
+  --color-blue-200: #bfdbfe;
+  --color-blue-300: #93c5fd;
+  --color-blue-400: #60a5fa;
+  --color-blue-500: #2563eb;
+  --color-blue-600: #0056d2; /* Trustworthy Academic Royal Blue */
+  --color-blue-700: #0043a5;
+  --color-blue-800: #003180;
+  --color-blue-900: #1e3a8a;
+  --color-blue-950: #172554;
 
-  /* Tech Cyan Accent - Inspired by the 'Training' and 'MX' badge */
-  --color-cyan-50: #ecfeff;
-  --color-cyan-100: #cffafe;
-  --color-cyan-200: #a5f3fc;
-  --color-cyan-300: #67e8f9;
-  --color-cyan-400: #22d3ee;
-  --color-cyan-500: #06b6d4;
-  --color-cyan-600: #0891b2;
-  --color-cyan-700: #0e7490;
-  --color-cyan-800: #155e75;
-  --color-cyan-900: #164e63;
-
-  /* Harmonized Secondary Violet Accent */
+  /* Rich Violet Accents */
   --color-purple-50: #faf5ff;
   --color-purple-100: #f3e8ff;
   --color-purple-500: #8b5cf6;
   --color-purple-600: #7c3aed;
+  --color-purple-700: #6d28d9;
 }
 
 @utility glass {
@@ -50,13 +41,13 @@
 }
 
 @utility gradient-text {
-  background: linear-gradient(135deg, #0d3a71 0%, #0ea5e9 100%);
+  background: linear-gradient(135deg, #0056d2 0%, #7c3aed 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 @utility ai-glow {
-  box-shadow: 0 0 24px rgba(14, 165, 233, 0.12), 0 0 40px rgba(13, 58, 113, 0.08);
+  box-shadow: 0 0 24px rgba(124, 58, 237, 0.12), 0 0 40px rgba(0, 86, 210, 0.08);
 }
 
 @keyframes fadeIn {
@@ -80,6 +71,11 @@
 /* Custom Base Global Tweaks for Premium Edutech Experience */
 body {
   background-color: #f8fafc; /* Crisp off-white slate background */
+  transition: background-color 0.3s ease;
+}
+
+.dark body {
+  background-color: #020617; /* Deep academic slate background for dark theme */
 }
 
 /* Custom card shadow styles for premium UI feel */

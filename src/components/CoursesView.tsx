@@ -115,7 +115,7 @@ export default function CoursesView({ onWishlistToggle, wishlist, onEnroll }: Co
 
         {/* Compare quick trigger bar */}
         {(compareList.length > 0 || compareError) && (
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-3 bg-gradient-to-r from-blue-600 to-cyan-500 text-white p-4 rounded-xl shadow-lg transition-all animate-fadeIn">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-3 bg-gradient-to-r from-blue-600 to-purple-500 text-white p-4 rounded-xl shadow-lg transition-all animate-fadeIn">
             <div className="flex items-center gap-3">
               <Shuffle className="h-5 w-5 animate-pulse" />
               <p className="text-xs sm:text-sm font-semibold">
@@ -186,8 +186,8 @@ export default function CoursesView({ onWishlistToggle, wishlist, onEnroll }: Co
                       onClick={() => toggleCompare(course.id)}
                       className={`p-1.5 rounded-full shadow hover:scale-105 transition-all ${
                         isComparing
-                          ? "bg-cyan-600 text-white"
-                          : "bg-white/90 backdrop-blur-md dark:bg-slate-900/90 text-gray-700 dark:text-slate-300 hover:text-cyan-600"
+                          ? "bg-purple-600 text-white"
+                          : "bg-white/90 backdrop-blur-md dark:bg-slate-900/90 text-gray-700 dark:text-slate-300 hover:text-purple-600"
                       }`}
                       title="Compare Course"
                     >
@@ -246,7 +246,7 @@ export default function CoursesView({ onWishlistToggle, wishlist, onEnroll }: Co
                       </button>
                       <button
                         onClick={() => onEnroll(course)}
-                        className="px-4 py-2 text-xs font-bold text-white bg-gradient-to-r from-blue-600 to-cyan-500 rounded-xl hover:from-blue-700 hover:to-cyan-600 shadow-md"
+                        className="px-4 py-2 text-xs font-bold text-white bg-gradient-to-r from-blue-600 to-purple-500 rounded-xl hover:from-blue-700 hover:to-purple-600 shadow-md"
                       >
                         Enroll
                       </button>
@@ -396,7 +396,7 @@ export default function CoursesView({ onWishlistToggle, wishlist, onEnroll }: Co
                 </button>
                 <button
                   onClick={() => { onEnroll(selectedCourse); setSelectedCourse(null); }}
-                  className="px-6 py-2 bg-gradient-to-r from-blue-600 to-cyan-500 hover:opacity-90 text-xs font-bold text-white rounded-xl shadow"
+                  className="px-6 py-2 bg-gradient-to-r from-blue-600 to-purple-500 hover:opacity-90 text-xs font-bold text-white rounded-xl shadow"
                 >
                   Enroll Now
                 </button>
@@ -459,7 +459,7 @@ export default function CoursesView({ onWishlistToggle, wishlist, onEnroll }: Co
                       <p><strong>Duration:</strong> {course2.duration}</p>
                       <p><strong>Mode:</strong> {course2.mode}</p>
                       <p><strong>Trainer:</strong> {course2.trainer}</p>
-                      <p><strong>Fee Structure:</strong> <span className="font-black text-cyan-600">₹{course2.price.toLocaleString("en-IN")}</span></p>
+                      <p><strong>Fee Structure:</strong> <span className="font-black text-purple-600">₹{course2.price.toLocaleString("en-IN")}</span></p>
                     </div>
                     <div className="border-t pt-3 space-y-2">
                       <p className="text-[10px] font-black uppercase text-gray-400">Core Curriculum Topics</p>

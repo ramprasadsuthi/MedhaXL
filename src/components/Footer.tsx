@@ -29,7 +29,7 @@ export default function Footer({ onNavigate }: { onNavigate: (tab: string) => vo
             </div>
             <div className="flex flex-col text-left">
               <span className="font-poppins font-extrabold text-white text-sm tracking-wide leading-tight">MR TECHNOLOGIES</span>
-              <span className="font-poppins font-bold text-cyan-400 text-xs tracking-widest leading-none">MEDHA - RUBIKS</span>
+              <span className="font-poppins font-bold text-purple-400 text-xs tracking-widest leading-none">MEDHA - RUBIKS</span>
             </div>
           </div>
           <p className="text-xs text-slate-400 leading-relaxed max-w-xs mx-auto md:mx-0">

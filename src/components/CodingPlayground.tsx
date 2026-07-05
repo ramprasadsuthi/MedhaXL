@@ -223,9 +223,9 @@ public class Main {
             </div>
 
             {/* 2. AI Coding Mentor Explanation */}
-            <div className="flex-1 flex flex-col rounded-2xl border border-slate-100 bg-gradient-to-br from-blue-50/50 via-white to-cyan-50/50 p-5 dark:from-slate-900 dark:to-slate-950 dark:border-slate-800 shadow-md">
+            <div className="flex-1 flex flex-col rounded-2xl border border-slate-100 bg-gradient-to-br from-blue-50/50 via-white to-purple-50/50 p-5 dark:from-slate-900 dark:to-slate-950 dark:border-slate-800 shadow-md">
               <div className="flex items-center gap-2 mb-3">
-                <Sparkles className="h-5 w-5 text-cyan-600 dark:text-cyan-400" />
+                <Sparkles className="h-5 w-5 text-purple-600 dark:text-purple-400" />
                 <h4 className="text-sm font-bold font-poppins text-gray-900 dark:text-white uppercase tracking-wider">AI Senior Code Mentor</h4>
               </div>
 
